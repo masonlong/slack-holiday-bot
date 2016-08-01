@@ -30,9 +30,9 @@ app.get('/today', function(request, response){
         response.json({
           'response_type': 'in_channel', 
           'text': 'These are the holidays today', 
-          'attachments': {
+          'attachments': [{
           'text': 'hey'
-          }
+          }]
         });
     });
 }).on('error', function(e){
