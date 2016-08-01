@@ -31,7 +31,7 @@ app.get('/today', function(request, response){
           'response_type': 'in_channel', 
           'text': 'These are the holidays today', 
           'attachments': [{
-          'text': 'hey'
+          'text': finalVal
           }]
         });
     });
