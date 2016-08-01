@@ -26,7 +26,13 @@ app.get('/today', function(request, response){
             holidayArray.push(dayString);
         };
         console.log("Got a response: ", holidayResponse);
-        response.json({'text': holidayArray});
+        response.json({
+          'response_type': 'in_channel', 
+          'text': 'These are the holidays today', 
+          'attachments': {
+          'text': holidayArray
+          }
+        });
     });
 }).on('error', function(e){
       console.log("Got an error: ", e);
