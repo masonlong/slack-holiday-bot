@@ -25,12 +25,14 @@ app.get('/today', function(request, response){
             var dayString = holidayResponse.holidays[i].name;
             holidayArray.push(dayString);
         };
+        var arrayToString = holidayArray.toString();
+        var finalVal = holidayArray.toString().replace(/,/g, "\n");
         console.log("Got a response: ", holidayResponse);
         response.json({
           'response_type': 'in_channel', 
           'text': 'These are the holidays today', 
           'attachments': {
-          'text': holidayArray
+          'text': finalVal
           }
         });
     });
